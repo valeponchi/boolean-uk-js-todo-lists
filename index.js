@@ -85,7 +85,6 @@ yourList.push(titles)
 console.log(yourList)
 
 
-
 // Tips
 // - The user id creates an identifiable relationship with the todos
 // - Sometimes it's good to map some values into a new data structure
@@ -101,9 +100,15 @@ if (option === 1) {
 } else if (option === 2) {
   let newToDo = prompt("Please, add the new to-do here:")
   titles.push(newToDo)
-  alert("Here is your to-do-list: \n" + String(yourList))
+  alert("Here is your new to-do-list: \n" + String(yourList))
 }
 
 
 // Challenge 2
 // Now that you can add a todo, add the option to either delete or update a todo. Add also the option to repeatedly choose a different user, or to finish the program
+
+let change = Number(prompt("Press 1 if you would like to update an existing to-do \nPress 2 if you would like to delete a to-do \nPress Cancel if you want to exit."))
+
+if (change === 1) {
+  let update = prompt("")
+}
