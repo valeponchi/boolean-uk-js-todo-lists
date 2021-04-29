@@ -39,6 +39,7 @@ let usersData = []
 
 for (const user of users) {
   usersData.push([user.id, user.name, user.address.city])
+  // if I want to use the alert, I have to usersData = "" and here:
   // [
   //   [usersData += user.id + " "],  
   //   [usersData += user.name + ", from "],
@@ -53,18 +54,19 @@ console.log(usersData)
 
 // 2.
 // - Prompt the user for a user id
-let yourID = Number(prompt("Please type your ID"))
 
 // - Display an alert with the username and all the todos titles that belong to that user 
 
 // {
-//   userId: 1,
-//   id: 1,
-//   title: "delectus aut autem",
-//   completed: false
-// },
-
-
+  //   userId: 1,
+  //   id: 1,
+  //   title: "delectus aut autem",
+  //   completed: false
+  // },
+let yourID = Number(prompt("Please type your ID"))
+// let option = Number(prompt("Press 1 if you want to see your to-do-list \nPress 2 if you want to add a new to-do"))
+  
+  
 let yourList = []
 for (const user of users) {
   if (yourID === user.id)  {
@@ -75,9 +77,10 @@ for (const user of users) {
 let titles = []
 for (const todo of todos) {
   if (yourID === todo.userId) {
-    titles.push(todo.title)
+    titles.push(todo.title + " \n")
   }
 }
+
 yourList.push(titles)
 console.log(yourList)
 
@@ -89,6 +92,18 @@ console.log(yourList)
 
 // Challenge
 // After you select a user, add the option to either show the todos or add a new todo to the list
+
+// let selectedUser = users[3]
+let option = Number(prompt("Press 1 if you want to see your to-do-list \nPress 2 if you want to add a new to-do"))
+
+if (option === 1) {
+  alert("Here is your to-do-list: \n" + String(yourList))
+} else if (option === 2) {
+  let newToDo = prompt("Please, add the new to-do here:")
+  titles.push(newToDo)
+  alert("Here is your to-do-list: \n" + String(yourList))
+}
+
 
 // Challenge 2
 // Now that you can add a todo, add the option to either delete or update a todo. Add also the option to repeatedly choose a different user, or to finish the program
