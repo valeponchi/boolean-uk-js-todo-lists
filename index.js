@@ -93,13 +93,18 @@ console.log(yourList)
 // After you select a user, add the option to either show the todos or add a new todo to the list
 
 // let selectedUser = users[3]
-let option = Number(prompt("Press 1 if you want to see your to-do-list \nPress 2 if you want to add a new to-do"))
+let seeOrAdd = Number(prompt("Press 1 if you want to see your to-do-list \nPress 2 if you want to add a new to-do"))
 
-if (option === 1) {
+if (seeOrAdd === 1) {
   alert("Here is your to-do-list: \n" + String(yourList))
-} else if (option === 2) {
+} else if (seeOrAdd === 2) {
   let newToDo = prompt("Please, add the new to-do here:")
-  titles.push(newToDo)
+  titles.push({
+    id: todos.length + 1,
+    userId: yourID,
+    title: newToDo,
+    completed: false
+  })
   alert("Here is your new to-do-list: \n" + String(yourList))
 }
 
@@ -107,8 +112,8 @@ if (option === 1) {
 // Challenge 2
 // Now that you can add a todo, add the option to either delete or update a todo. Add also the option to repeatedly choose a different user, or to finish the program
 
-let change = Number(prompt("Press 1 if you would like to update an existing to-do \nPress 2 if you would like to delete a to-do \nPress Cancel if you want to exit."))
+let ChangeOrDelete = Number(prompt("Press 1 if you would like to update an existing to-do \nPress 2 if you would like to delete a to-do \nPress Cancel if you want to exit."))
 
-if (change === 1) {
+if (ChangeOrDelete === 1) {
   let update = prompt("")
 }
